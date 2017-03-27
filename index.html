@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>STARTER</title>
+		<title>Renato Hoxha</title>
 		<!-- Favicons -->
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel="apple-touch-icon" sizes="72x72" href="favicon.png">
@@ -40,7 +40,7 @@
 		<!-- SECTION -->
 			<section class="welcome-text">
 				<div class="welcome-content">
-						<h1 class="title">HI</h1>
+						<h1 class="title">RH</h1>
 					<p class="paragraph">Shake my hand</p>
 					<button class="button-hand" id="hand-button">
 						<svg version="1.1" id="l-bulb" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="477.509px" height="715.18px" viewBox="709.833 32.167 477.509 715.18"
@@ -76,16 +76,18 @@
 				</div>
 				<div class="text-content">
 					<h1 id="blink-text"></h1>
-					<div class="button-content">
-						<button id='about-me' class="about-button">about</button> 
-						<button id='portofolio'>portofolio</button>
-					</div>
+				</div>
+				<div class="button-content">
+					<button id='about-me' class="about-button">about</button> 
+					<button id='portofolio' class="portofolio-button">portofolio</button>
 				</div>
 			</section>
 			<section id="about-me-section" class="about-me">
-				<button class="close-button">Close</button>
+				<!-- <button id="close-button-ab" class="close-button">Close</button> -->
 			</section>
-			<section id="portofolio-section" class="portofolio"></section>
+			<section id="portofolio-section" class="portofolio">
+				<!-- <button id="close-button-por" class="close-button">Close</button> -->
+			</section>
 		<!-- FOOTER SECTION -->
 
 
@@ -121,7 +123,10 @@
 			function doneResizing(){
 			}
 			$( "#hand-button" ).click(function() {
-				$(".welcome-content").addClass("rize-hand");
+		        setTimeout(function() {
+		            $(".welcome-content").addClass("rize-hand");
+		        }, 50);
+
 				$("#page-top").delay(700).queue(function(next) {
 			   		$(this).addClass("second-page");
 			   		$(".welcome-content").removeClass("rize-hand");
@@ -144,15 +149,26 @@
 				});
 				$( "#about-me" ).click(function() {
 					$(".about-me").toggleClass("open");
-					$(".about-button").toggleClass("rotate");
-					$(".body-class").removeClass("second-page");
-					$(".body-class").addClass("third-page");
+					$(".about-button").toggleClass("open");
+					$(".body-class").toggleClass("third-page");
 
 				 });
 				$( "#portofolio" ).click(function() {
-					$("#portofolio-section").addClass("open");
+					$(".portofolio").toggleClass("open");
+					$(".portofolio-button").toggleClass("open");
+					$(".body-class").toggleClass("fourth-page");
 				 });
 			});
+
+			$( "#close-button-ab" ).click(function() {
+		            $(".body-class").removeClass("third-page");
+		            $(".body-class").addClass("second-page");
+		            $(".about-me").toggleClass("open");
+
+		     });
+		    $( "#close-button-por" ).click(function() {
+		            $(".about-me").toggleClass("open");
+		     }); 
 
 			// $("#page-top").delay(3700).queue(function(next) {
 			//   $(this).addClass("black-bg");
