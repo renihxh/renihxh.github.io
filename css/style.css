@@ -645,6 +645,8 @@ body {
        -o-transition: all 1s ease; 
       -ms-transition:  all 1s ease;
           transition: all 1s ease;	
+    height: 100%;
+    overflow-y: auto;
 }
 .button-content{
 	opacity: 0;
@@ -671,7 +673,7 @@ body {
 }
 
 .about-button.open{
-	position: absolute!important;
+	position: fixed!important;
 	right: -1%!important;
 	 -ms-transform: rotate(90deg); /* IE 9 */
     -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
@@ -685,8 +687,8 @@ body {
 }
 
 .portofolio-button.open{
-	position: absolute!important;
-	left: -1%!important;
+	position: fixed!important;
+	left: -2%!important;
 			-ms-transform: rotate(-90deg); /* IE 9 */
     	-webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
     			transform: rotate(-90deg);
@@ -704,12 +706,16 @@ body {
        -o-transition: all 1s ease; 
       -ms-transition:  all 1s ease;
           transition: all 1s ease;
-    z-index: 2;
+    	z-index: 2;
 }
 .portofolio.open{
 	float: right;
 }
 
+.project-thumb{
+	width: 100%;
+	height: auto;
+}
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {  
@@ -770,10 +776,12 @@ body {
     transform: translate(0%, 0%);
 }
 .button-content.show {
-    margin-top: 93%;
+    margin-top: 0;
     text-align: left;
     position: relative;
     margin-left: 7%;
+    position: absolute;
+    top: 65%;
 }
 .about-me.open, .portofolio.open {
     width: 93%;
@@ -782,7 +790,7 @@ body {
     right: -7%!important;
 } 
 .portofolio-button.open {
-    left: -22%!important;
+    left: -12%!important;
 }  
 }
 
